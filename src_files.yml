@@ -1,0 +1,4 @@
+cfmath:
+  files: [
+    CfMath.sv,
+  ]
