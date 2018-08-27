@@ -17,7 +17,7 @@
   * A constant function must be called with arguments that are constants.
   */
 
-package CfMath;
+package automatic CfMath;
 
     /** Ceiled Division of Two Natural Numbers
       *
