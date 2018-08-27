@@ -29,6 +29,7 @@ package automatic CfMath;
         integer remainder;
     begin
 
+        // pragma translate_off
         if (dividend < 0)
             $fatal(1, "Dividend %0d is not a natural number!", dividend);
 
@@ -38,6 +39,7 @@ package automatic CfMath;
         if (divisor == 0) begin
             $fatal(1, "Division by zero!");
         end
+        // pragma translate_on
 
         remainder = dividend;
         for (ceil_div = 0; remainder > 0; ceil_div = ceil_div+1)
@@ -58,8 +60,10 @@ package automatic CfMath;
         input longint val;
     begin
 
+        // pragma translate_off
         if (val < 0)
             $fatal(1, "Argument %0d is not a natural number!", val);
+        // pragma translate_on
 
         val = val - 1;
         for (log2 = 0; val > 0; log2 = log2+1)
