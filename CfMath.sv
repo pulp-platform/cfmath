@@ -58,6 +58,7 @@ package automatic CfMath;
 
     function integer log2;
         input longint val;
+        longint tmp;
     begin
 
         // pragma translate_off
@@ -65,9 +66,9 @@ package automatic CfMath;
             $fatal(1, "Argument %0d is not a natural number!", val);
         // pragma translate_on
 
-        val = val - 1;
-        for (log2 = 0; val > 0; log2 = log2+1)
-            val = val >> 1;
+        tmp = val - 1;
+        for (log2 = 0; tmp > 0; log2 = log2+1)
+            tmp = tmp >> 1;
 
     end endfunction
 
