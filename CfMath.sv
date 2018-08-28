@@ -17,7 +17,7 @@
   * A constant function must be called with arguments that are constants.
   */
 
-package CfMath;
+package automatic CfMath;
 
     /** Ceiled Division of Two Natural Numbers
       *
@@ -29,6 +29,7 @@ package CfMath;
         integer remainder;
     begin
 
+        // pragma translate_off
         if (dividend < 0)
             $fatal(1, "Dividend %0d is not a natural number!", dividend);
 
@@ -38,6 +39,7 @@ package CfMath;
         if (divisor == 0) begin
             $fatal(1, "Division by zero!");
         end
+        // pragma translate_on
 
         remainder = dividend;
         for (ceil_div = 0; remainder > 0; ceil_div = ceil_div+1)
@@ -56,14 +58,17 @@ package CfMath;
 
     function integer log2;
         input longint val;
+        longint tmp;
     begin
 
+        // pragma translate_off
         if (val < 0)
             $fatal(1, "Argument %0d is not a natural number!", val);
+        // pragma translate_on
 
-        val = val - 1;
-        for (log2 = 0; val > 0; log2 = log2+1)
-            val = val >> 1;
+        tmp = val - 1;
+        for (log2 = 0; tmp > 0; log2 = log2+1)
+            tmp = tmp >> 1;
 
     end endfunction
 
